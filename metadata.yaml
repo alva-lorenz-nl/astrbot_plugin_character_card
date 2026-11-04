@@ -1,0 +1,9 @@
+name: astrbot_plugin_character_card
+display_name: 角色卡生成器
+desc: 快速生成适配 AstrBot 的沉浸式角色卡与破甲/偏爱提示词模板
+version: 1.0.0
+author: Alva Lorenz
+repo: https://github.com/alva-lorenz-nl/astrbot_plugin_character_card
+pages:
+  - name: card_builder
+    title: 角色卡生成器
