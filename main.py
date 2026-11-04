@@ -80,8 +80,8 @@ class CharacterCardPlugin(Star):
     @filter.command("生成角色卡")
     async def generate_card(self, event: AstrMessageEvent):
         msg = event.message_str.strip()
-        lines = msg.split("
-")
+        lines = msg.split("\n")
+
         
         info = {}
         for line in lines:
@@ -99,7 +99,5 @@ class CharacterCardPlugin(Star):
             return
             
         result_prompt = build_character_card(info)
-        reply = "🎉 已经为你编译好专属的角色卡 System Prompt 啦！直接复制下方内容填入 AstrBot 即可：
-
-" + result_prompt
+        reply = "🎉 已经为你编译好专属的角色卡 System Prompt 啦！直接复制下方内容填入 AstrBot 即可：\n\n" + result_prompt
         yield event.plain_result(reply)
