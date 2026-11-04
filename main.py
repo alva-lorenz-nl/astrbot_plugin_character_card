@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 import re
-from astrbot.api.all import Star, Context, AstrMessageEvent, filter
+from astrbot.api.star import Star, Context
+from astrbot.api.event import filter, AstrMessageEvent
 
 TEMPLATE_HELP = """✨ 【AstrBot 角色卡生成填空模板】 ✨
 请直接复制下方内容，填好后发送给我（发「生成角色卡」后面带上这些内容即可）：
@@ -68,7 +69,6 @@ def build_character_card(info: dict) -> str:
 
     return prompt
 
-@Star("astrbot_plugin_character_card")
 class CharacterCardPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
